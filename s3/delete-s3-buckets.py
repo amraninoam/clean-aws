@@ -35,5 +35,5 @@ for bucket in buckets:
                     command = ["aws","s3api","put-bucket-versioning","--bucket",bucketName,"--versioning-configuration", "Status=Suspended"]
                     output,error=call_command (command)
                     # apply policy to delete files tomorrow.
-                    command = ["aws","s3api","put-bucket-lifecycle-configuration","--bucket",bucketName,"--lifecycle-configuration","file:///home/noama/aws/s3lifecycle.json"] # add delete opbject policy
+                    command = ["aws","s3api","put-bucket-lifecycle-configuration","--bucket",bucketName,"--lifecycle-configuration","file://s3/s3lifecycle.json"] # add delete opbject policy
                     output,error = call_command (command)
